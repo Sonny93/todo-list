@@ -1,0 +1,25 @@
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #e7dfd5;
+	background: #204051;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.red {
+    color: red !important;
+}
+
+.green {
+    color: green !important;
+}

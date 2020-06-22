@@ -1,0 +1,189 @@
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.App {
+	max-height: calc(100vh - 30px);
+	height: 100%;
+	width: 375px;
+    padding: 20px;
+    border: 1px solid #3b6978;
+    border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+}
+
+button:disabled {
+    cursor: not-allowed !important;
+    color: #fff !important;
+    background: red !important;
+    border: 1px solid red !important;
+}
+
+div.header-todo > * {
+    user-select: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+div.header-todo > h1 {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+div.header-todo > i {
+    margin-bottom: 20px;
+}
+
+.todolist {
+	flex: 1 1;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+
+.todolist .li-noitem {
+    user-select: none;
+    color: #e7dfd5;
+	font-size: .9em;
+	font-style: italic;
+    background: transparent;
+    border-radius: 2px;
+    border: 1px solid #3b6978;
+	padding: 10px;
+    margin-bottom: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    transition: .15s;
+}
+
+.todolist .task {
+    user-select: none;
+    cursor: pointer;
+    color: #e7dfd5;
+    background: #3b6978;
+    border-radius: 2px;
+    border: 1px solid #84a9ac;
+	padding: 10px;
+	margin-bottom: 4px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    transition: .15s;
+    animation: task-in .5s both;
+}
+
+.todolist .task.finish {
+    background: #204051;
+}
+
+.todolist .task:hover {
+    box-shadow: 0 0 5px 1px #84a9ac;
+}
+
+.todolist .task > div:not(.controls) {
+    pointer-events: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.todolist .task .controls {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+.todolist .task .controls button {
+	cursor: pointer;
+    padding: 5px 13px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    margin-left: 5px;
+    margin-bottom: 0;
+    transition: .15s;
+}
+
+.todolist .task .controls button.btn-delete {
+    color: #e7dfd5;
+    background: #ed5a5a;
+    border: 1px solid #ed5a5a;
+}
+
+.todolist .task .controls button.btn-delete:hover {
+    background: #d33c28;
+    border: 1px solid #d33c28;
+}
+
+.todolist .task .controls button.btn-finish {
+    color: #e7dfd5;
+    background: #16BAC5;
+    border: 1px solid #16BAC5;
+}
+
+.todolist .task .controls button.btn-finish:hover {
+    background: #108b94;
+    border: 1px solid #108b94;
+}
+
+.App form {
+	-webkit-user-select: none;
+	        user-select: none;
+    margin-top: 5px;
+    border-top: 1px solid #3b6978;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.App form input {
+    flex: 1 1;
+    color: #e7dfd5;
+    background: #3b6978;
+    border: 1px solid #84a9ac;
+    border-radius: 2px;
+    padding: 9px;
+    margin-bottom: 5px;
+}
+
+.App form input::placeholder {
+    color: #e7dfd5;
+}
+
+.App form button, .App > button {
+	cursor: pointer;
+    color: #e7dfd5;
+    background: #3b6978;
+    border: 1px solid #3b6978;
+    border-radius: 2px;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: .15s;
+}
+
+.App form button:not(:disabled):hover, .App > button:not(:disabled):hover {
+	box-shadow: 0 0 5px 1px #84a9ac;
+}
+
+.App form button:not(:disabled):focus, .App > button:not(:disabled):focus {
+	border: 1px solid #e7dfd5;
+}
+
+@keyframes task-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
